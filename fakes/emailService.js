@@ -3,6 +3,7 @@ module.exports = {
         var msg = 'Pretending to send registration email to ' + user.email;
         if (verifyQueryString) {
             msg += '. To verify email, visit /verifyemail' + verifyQueryString;
+            user.verifyQueryString = verifyQueryString;
         }
         console.log(msg);
         cb(null);

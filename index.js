@@ -56,7 +56,7 @@ var localAuth = localAuthFactory(app, services, {
 // ------------------------------------------------------------
 
 app.post('/login', localAuth.login(), function(req, res) {
-  res.status(200).send({ loggedIn: true });
+  res.status(200).send({ logIn: 'attempted' });
 });
 
 app.post('/logout', localAuth.logout(), function(req, res) {
