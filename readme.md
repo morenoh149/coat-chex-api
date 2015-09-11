@@ -1,6 +1,6 @@
 # chexology interview challenge - api
 
-## to use this api:
+## to use this api
 
 npm install
 
