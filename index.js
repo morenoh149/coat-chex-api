@@ -56,7 +56,7 @@ var localAuth = localAuthFactory(app, services, {
 // ------------------------------------------------------------
 
 app.post('/login', localAuth.login(), function(req, res) {
-  res.status(200).send({ logIn: 'attempted' });
+  res.status(200).send({ loggedIn: true });
 });
 
 app.post('/logout', localAuth.logout(), function(req, res) {
@@ -64,6 +64,7 @@ app.post('/logout', localAuth.logout(), function(req, res) {
 });
 
 app.post('/register', localAuth.register(), function(req, res) {
+  // only reachable if there were no issues registering
   res.status(200).send({ registered: true });
 });
 app.get('/verifyemail', localAuth.verifyEmailView(), function(req, res) {

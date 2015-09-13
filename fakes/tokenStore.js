@@ -26,6 +26,10 @@ FakeTokenStore.prototype.findByEmail = function(email, callback) {
     callback(null, found);
 };
 
+FakeTokenStore.prototype.getTokens = function(){
+  return this.tokens
+};
+
 function clone(tokenDetails) {
     var parsed = JSON.parse(JSON.stringify(tokenDetails));
     parsed.expiry = new Date(parsed.expiry);
